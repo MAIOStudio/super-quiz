@@ -20,10 +20,7 @@ var sequelize = new Sequelize(DB_name, user, pwd,
 	{dialect: protocol,
 	 protocol: protocol,
 	 port: port,
-<<<<<<< HEAD
 	 host: host,
-=======
->>>>>>> 86e45a7de2b8df3490aebbe2e6930e03e648ff78
 	 storage: storage, // solo SQLite (.env)
 	 omitNull: true	// solo Postgres
 	}
@@ -37,26 +34,17 @@ exports.Quiz = Quiz; // Exportar definición de tabla Quiz
 
 // sequielize.sync() crea e inicializa tabla de preguntas en DB
 sequelize.sync().then(function(){
-<<<<<<< HEAD
 	// then(..) ejecuta el manejador una vez creada la tabla
-=======
-	// success(..) ejecuta el manejador una vez creada la tabla
->>>>>>> 86e45a7de2b8df3490aebbe2e6930e03e648ff78
 	Quiz.count().then(function (count){
 		if(count === 0){ // La tabla se inicializa solo si está vacía
 			Quiz.create({ pregunta: '¿Capital de Italia?',
 						  respuesta: 'Roma'
-<<<<<<< HEAD
 			});
 	Quiz.create({ pregunta: '¿Capital de Portugal?',
 						  respuesta: 'Lisboa'
 			})
 	.then(function(){console.log('Base de datos inicializada')});
-=======
 
-			})
-		 .then(function(){console.log('Base de datos inicializada')});
->>>>>>> 86e45a7de2b8df3490aebbe2e6930e03e648ff78
 		};
 	});
 }) ;
